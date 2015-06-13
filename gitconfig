@@ -1,0 +1,42 @@
+# vim: set filetype=gitconfig:
+
+[color]
+	ui = auto
+
+[alias]
+    alias = "!f(){ git config -l | grep alias; };f"
+    st = status --short --branch
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    br = branch
+    bra = branch -avv
+    dc = diff --cached
+    di = diff
+    ds = "stash show stash@{0} -p"
+    ss = "!f(){ git stash show -p stash@{${1}}; };f"
+    sl = stash list
+    sr = "!f(){ rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save 'tmp stash from stash-rename'; git stash apply $rev && shift && git stash save '$@' && [ $s != 0 ] && git stash pop stash@{1}; };f"
+    fa = fetch --all
+    fp = fetch -p
+    unstash = stash pop
+    ff = "!f(){ B=$(git rev-parse --abbrev-ref HEAD) && git merge --ff-only origin/$B; };f"
+    rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
+    mkbranch = "!f(){ git checkout -b ${1} && git push origin -u ${1}; };f"
+    ls = log --pretty=format:'%C(green)%h%Creset - %s%C(yellow)%d%Creset%n          %aD (%ar %C(red)- %an%Creset)' --graph --color
+    ll = log --pretty=format:'%C(green)%h%Creset - %s%C(yellow)%d%Creset%n          %aD (%ar %C(red)- %an%Creset)' --graph --color --all
+    unfuck = "!f(){ git reset --hard origin/HEAD; rm -fv `git st | grep ^? | cut -d' '  -f2-`; }; f"
+
+[core]
+	editor = vim
+
+[merge]
+	tool = vimdiff
+
+[diff]
+	tool = vimdiff
+	noprefix = true
+	algorithm = patience
+
+[push]
+	default = simple
