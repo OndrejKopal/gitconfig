@@ -1,7 +1,6 @@
 # vim: set filetype=gitconfig:
-
 [color]
-	ui = auto
+    ui = auto
 
 [alias]
     alias = "!f(){ git config -l | grep alias; };f"
@@ -28,16 +27,17 @@
     unfuck = "!f(){ git reset --hard origin/HEAD; rm -fv `git st | grep ^? | cut -d' '  -f2-`; }; f"
 
 [core]
-	editor = vim
-	autocrlf = true
+    editor = vim
+    eol = lf
+    autocrlf = input
 
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 
 [diff]
-	tool = vimdiff
-	noprefix = true
-	algorithm = patience
+    tool = vimdiff
+    noprefix = true
+    algorithm = patience
 
 [push]
-	default = simple
+    default = simple
