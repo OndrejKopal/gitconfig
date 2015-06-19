@@ -43,8 +43,5 @@
     noprefix = true
     algorithm = patience
 
-[include]
-    path = .gituser
-
 [push]
     default = simple
