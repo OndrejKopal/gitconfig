@@ -9,10 +9,16 @@ Clone this repository or download zip archive. Include this gitconfig file to yo
     path = /path/to/gitconfig/repository/gitconfig
 ```
 
+Init .git template directory with tags generate for vim:
+```
+$ cd
+$ ln -s /path/to/gitconfig/repository/gitconfig/.git_templatedir
+```
+
 This config doesn't contains user settings. When you can set user informations, plese use these commands:
 ```
-git config --global user.name "Super Loony"
-git config --global user.email "loony(:))superloony.info"
+$ git config --global user.name "Super Loony"
+$ git config --global user.email "loony(:))superloony.info"
 ```
 
 Include the git prompt config to your bash shell config file. Example:

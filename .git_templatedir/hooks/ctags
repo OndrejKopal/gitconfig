@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+DIR=`git rev-parse --git-dir`
+
+if [ -e "$DIR/tags" ]
+    then
+        rm "$DIR/tags"
+fi
+
+ctags-exuberant -f "$DIR/tags" \
+    -h \".php\" -R \
+    --languages=php \
+    --exclude=\".svn\" \
+    --exclude=\".vim\" \
+    --exclude=\".swp\" \
+    --exclude=\".phar\" \
+    --totals=yes \
+    --tag-relative=yes \
+    --PHP-kinds=cdfi \
+    --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
+    --regex-PHP='/interface ([^ ]*)/\1/c/' \
+    --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/'
