@@ -27,7 +27,7 @@ $ cd
 $ ln -s ~/my_settings/gitconfig/.git_templatedir
 ```
 
-This config doesn't contains user settings. When you can set user informations, plese use these commands:
+This config contains example user info. When you can change git user info, plese use these commands:
 ```
 $ git config --global user.name "Super Loony"
 $ git config --global user.email "loony(:))superloony.info"
