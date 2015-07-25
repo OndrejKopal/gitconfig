@@ -52,3 +52,7 @@
 
 [init]
     templatedir = ~/.git_templatedir
+
+[user]
+    email = koon@email.cz
+    name = Ondrej Kopal
