@@ -11,10 +11,17 @@ fi
 ctags-exuberant -f "$DIR/tags" \
     -h \".php\" -R \
     --languages=php \
-    --exclude=\".svn\" \
-    --exclude=\".vim\" \
-    --exclude=\".swp\" \
+    --exclude=.git \
+    --exclude=data \
+    --exclude=node_modules \
+    --exclude=public \
+    --exclude=test \
+    --exclude=\".js\" \
+    --exclude=\".lock\" \
     --exclude=\".phar\" \
+    --exclude=\".svn\" \
+    --exclude=\".swp\" \
+    --exclude=\".vim\" \
     --totals=yes \
     --tag-relative=yes \
     --PHP-kinds=cdfi \
