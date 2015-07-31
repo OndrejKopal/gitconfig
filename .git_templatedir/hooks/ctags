@@ -10,21 +10,20 @@ fi
 
 ctags-exuberant -f "$DIR/tags" \
     -h \".php\" -R \
-    --languages=php \
+    --langmap=PHP:.php \
     --exclude=.git \
     --exclude=data \
     --exclude=node_modules \
     --exclude=public \
     --exclude=test \
-    --exclude=\".js\" \
-    --exclude=\".lock\" \
-    --exclude=\".phar\" \
-    --exclude=\".svn\" \
-    --exclude=\".swp\" \
-    --exclude=\".vim\" \
-    --totals=yes \
+    --exclude=*.js \
+    --exclude=*.lock \
+    --exclude=*.phar \
+    --exclude=*.svn \
+    --exclude=*.swp \
+    --exclude=*.vim \
     --tag-relative=yes \
-    --PHP-kinds=cdfi \
-    --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
+    --python-kinds=-i \
+    --PHP-kinds=-v \
     --regex-PHP='/interface ([^ ]*)/\1/c/' \
-    --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/'
+    --regex-PHP='/(abstract\s+|final\s+).*function\s+\&?\s*([^ (]+)/\2/f/'
