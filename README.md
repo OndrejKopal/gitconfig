@@ -35,5 +35,5 @@ $ git config --global user.email "loony(:))superloony.info"
 
 The last step: include the git prompt config to your bash shell config file
 ```
-$ echo "source ~/my_settings/gitprompt" >> ~/.bashrc
+$ echo "source ~/my_settings/gitconfig/gitprompt" >> ~/.bashrc
 ```
