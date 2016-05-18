@@ -18,6 +18,7 @@
     sl = stash list
     sr = "!f(){ rev=$(git rev-parse ${1}) && git stash drop ${1} || exit 1; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save 'tmp stash from stash-rename'; git stash apply $rev && shift && git stash save '$@' && [ $s != 0 ] && git stash pop stash@{1}; };f" #stash rename
     fa = fetch --all
+    fe = fetch
     fp = fetch -p
     ff = "!f(){ B=$(git rev-parse --abbrev-ref HEAD) && git merge --ff-only origin/$B; };f"
     ls = log --pretty=format:'%C(green)%h%Creset - %s%C(yellow)%d%Creset%n          %aD (%ar %C(red)- %an%Creset)' --graph --color
