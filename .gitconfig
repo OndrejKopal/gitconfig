@@ -37,6 +37,7 @@
     editor = vim
     eol = lf
     autocrlf = input
+    excludesfile = /Users/ondrej.kopal/.gitignore_global
 
 [merge]
     tool = vimdiff
@@ -56,9 +57,15 @@
 [grep]
     lineNumber = true
 
+[http]
+    sslVerify = false
+
 [init]
     templatedir = ~/.git_templatedir
 
 [user]
-	email = koon@email.cz
-	name = Ondrej Kopal
+    email = ondrej.kopal@lundegaard.eu
+    name = Ondrej Kopal
+
+[commit]
+    template = /Users/ondrej.kopal/.stCommitMsg
